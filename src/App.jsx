@@ -1,20 +1,32 @@
-import { Component} from "react";
+import { useState } from "react"
 
-class App extends Component{
+function App(){
 
-   render(){
+  const [nome, setNome] = useState('Ronaldo')
 
-    return(
+  return (
+    <div>
+      <h3>Pizzaria 2D</h3>
 
-      <>
-        <div>
-           <h3>aula retomada react vite </h3>
-           <p>Retomanda de criação de projeto</p>
-        </div>
-      </>
-    )
-   }
+      <input
+        className="nome"
+        onChange={(e)=>{setNome(e.target.value)}}
+        type="text" />
+
+      <button
+        className="botao"
+        onClick={()=>{
+          alert('O nome digita foi ' + nome)
+        }
+        }
+      >
+        CLIQUE AQUI
+      </button>
+
+    </div>
+  )
 }
- export default App
+
+export default App
  
  
